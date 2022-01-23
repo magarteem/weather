@@ -1,0 +1,59 @@
+@import "../../../../styles/variables.scss";
+
+.thisDay {
+  background-color: var(#{--components-background-default});
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 300px;
+  flex: 0 1 400px;
+  padding: 20px;
+  .dayUP {
+    display: flex;
+
+    .__degree {
+      display: flex;
+      flex-direction: column;
+      .__degreeNumneb {
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 96px;
+        line-height: 117px;
+      }
+      .__degreeDay {
+        font-weight: 400;
+        font-size: 40px;
+        color: var(#{--text-color-default});
+      }
+    }
+
+    .__svg {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      width: 100%;
+      //background-color: red;
+      img {
+        position: absolute;
+        bottom: -90px;
+        right: -50px;
+        height: 250px;
+        //background-color: royalblue;
+      }
+    }
+  }
+
+  .dayDown {
+    color: $base-color;
+    padding-top: 25px;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 30px;
+    p {
+      padding-top: 5px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+
+  .logoBlock {
+    display: flex;
+    align-items: center;
+    svg {
+      height: 65px;
+      width: 65px;
+    }
+    span {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #4793ff;
+      padding-left: 20px;
+    }
+  }
+  .selectCountry {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    .themeSelect {
+      height: 30px;
+      width: 30px;
+      margin-right: 20px;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

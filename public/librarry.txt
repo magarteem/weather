@@ -1,0 +1,11 @@
+npx create-react-app . --template typescript  (точка это текущая папка)
+
+npm i normalize.css
+npm install react-router-dom
+npm i react-select
+npm i axios
+npm i react-content-loader ======= https://skeletonreact.com/
+
+npm install @reduxjs/toolkit (добавляет тулкит в текущий проект)
+npm install react-redux
+

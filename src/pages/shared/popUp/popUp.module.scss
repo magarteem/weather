@@ -1,0 +1,79 @@
+@import "../../../styles/variables.scss";
+
+.popUp {
+  position: absolute;
+  z-index: 1001;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 40px 30px;
+  background-color: var(#{--components-background-default});
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+
+  .popUpLeft {
+    .__temperature {
+      font-weight: 500;
+      font-size: 60px;
+      color: $primary-color;
+      padding: 5px 0;
+    }
+    .dayNew {
+      font-weight: normal;
+      font-size: 25px;
+      line-height: 30px;
+      color: var(#{--text-color-default});
+    }
+
+    .iconWether {
+      height: 53px;
+      width: 53px;
+      margin: 25px 0;
+      position: relative;
+      img {
+        position: absolute;
+        left: -30px;
+        top: -40px;
+        height: 150px;
+      }
+    }
+    .info {
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      color: $base-color;
+    }
+  }
+
+  .popUpContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      transform: rotate(260deg);
+    }
+  }
+}
+
+.blure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}

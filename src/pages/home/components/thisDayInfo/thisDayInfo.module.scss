@@ -1,0 +1,54 @@
+@import "../../../../styles/variables.scss";
+
+.thisDayInfo {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 1 750px;
+  padding: 50px 0 50px 30px;
+  background-color: var(#{--components-background-default});
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  background-image: url("../../../../assets//images//cloud.png");
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+}
+
+.thisDayItem {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  .imgIndicator {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: $border-radius;
+    background-color: $light-background;
+    box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .dayItemName {
+    width: 122px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: $base-color;
+  }
+  .dayItemData {
+    color: var(#{--text-color-default});
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
