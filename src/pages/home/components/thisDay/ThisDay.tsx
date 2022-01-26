@@ -12,7 +12,7 @@ export const ThisDay = () => {
           <span className={s.__degreeNumneb}>
             {tempNew.weather.main.temp}&deg;
           </span>
-          <span className={s.__degreeDay}>Сегодня</span>
+          <span className={s.__degreeDay}>Сейчас</span>
         </div>
         <div className={s.__svg}>
           <GlobalSvgSelector id={tempNew.weather.weather[0].icon} />

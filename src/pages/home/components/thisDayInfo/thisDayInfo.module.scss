@@ -13,6 +13,23 @@
   background-image: url("../../../../assets//images//cloud.png");
   background-repeat: no-repeat;
   background-position: top 0 right 0;
+  svg {
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    margin-left: 20px;
+  }
+  @media (max-width: 991px) {
+    height: 250px;
+    padding: 25px 0 25px 30px;
+  }
+  @media (max-width: 767px) {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
 
 .thisDayItem {

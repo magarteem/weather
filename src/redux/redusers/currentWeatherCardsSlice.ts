@@ -1,7 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {} from "../thunk/getDataWeather";
 import { getWeatherForCards } from "../thunk/getWeatherForCards";
-import { OneWeatherDayType, WeatherOllType } from "../types/types";
+import {
+  OneWeatherDayType,
+  ResponseError,
+  WeatherOllType,
+} from "../types/types";
 
 type DayliType = {
   dt: number | undefined | any;
@@ -26,6 +30,10 @@ type CardsWeather = {
   popUp: {
     showPopUp: boolean;
     popUpState: DayliType;
+  };
+  error: {
+    cod: string;
+    message: string;
   };
 };
 
@@ -99,6 +107,10 @@ const initialState: CardsWeather = {
     },
   },
   isLoading: false,
+  error: {
+    cod: "",
+    message: "",
+  },
 };
 
 export const currentWeatherSliceCards = createSlice({
@@ -138,8 +150,10 @@ export const currentWeatherSliceCards = createSlice({
 
     [getWeatherForCards.rejected.type]: (
       state: CardsWeather,
-      action: PayloadAction<WeatherOllType>
-    ) => {},
+      action: PayloadAction<ResponseError>
+    ) => {
+      state.error.message = action.payload.message;
+    },
   },
 });
 

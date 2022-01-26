@@ -114,3 +114,8 @@ export interface Item {
   name: string;
   value: string | number;
 }
+
+export interface ResponseError {
+  cod: string;
+  message: string;
+}

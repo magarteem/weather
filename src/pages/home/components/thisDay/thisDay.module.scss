@@ -6,10 +6,18 @@
   border-radius: $border-radius;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  //flex-grow: 1;
   height: 300px;
   flex: 0 1 400px;
   padding: 20px;
+  // ? @
+  @media (max-width: 991px) {
+    height: 250px;
+    padding: 10px;
+  }
+  @media (max-width: 767px) {
+    flex: 0 1 100%;
+  }
   .dayUP {
     display: flex;
 
@@ -21,11 +29,17 @@
         font-weight: 500;
         font-size: 96px;
         line-height: 117px;
+        // ? @
+        @media (max-width: 991px) {
+          font-size: 70px;
+          line-height: normal;
+        }
       }
       .__degreeDay {
         font-weight: 400;
         font-size: 40px;
         color: var(#{--text-color-default});
+        z-index: 2;
       }
     }
 

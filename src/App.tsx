@@ -12,15 +12,17 @@ function App() {
   const statusPopUp = useAppSelector(
     (state) => state.currentWeatherSliceCardsReducer.popUp.showPopUp
   );
+
   return (
-    <div className="container">
-      {statusPopUp && <PopUp />}
-      <Header />
-      <Routes>
-        <Route path="/*" element={<Home />} />
-        {/*<Route path="/home/*" element={<Home />} />*/}
-        <Route path="/month-statistic/*" element={<MonthStatistic />} />
-      </Routes>
+    <div className="wrap">
+      <div className="container">
+        {statusPopUp && <PopUp />}
+        <Header />
+        <Routes>
+          <Route path="/*" element={<Home />} />
+          <Route path="/month-statistic/*" element={<MonthStatistic />} />
+        </Routes>
+      </div>
     </div>
   );
 }

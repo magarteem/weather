@@ -1,9 +1,18 @@
 .home {
   //  width: 100%;
   margin-top: 30px;
+  @media (max-width: 767px) {
+    margin-top: 10px;
+  }
 
   .weatherInfo {
     display: flex;
     justify-content: space-between;
+    // ? @
+    @media (max-width: 767px) {
+      //flex-direction: column;
+      flex-wrap: wrap;
+      //height: 200px;
+    }
   }
 }

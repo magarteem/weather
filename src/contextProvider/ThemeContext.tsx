@@ -1,24 +1,11 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 interface Props {
   children: ReactNode;
 }
 
 export const Context = createContext({});
-
-//any почему  item: string может быть нумбер
-
-const storage = {
-  setItem: (name: string, item: string) => {
-    localStorage.setItem(name, JSON.stringify(item));
-  },
-  getItem: (name: string) => {
-    const item = localStorage.getItem(name);
-    if (item) {
-      return JSON.parse(item);
-    }
-  },
-};
 
 function changeCssRootVariables(temeState: string) {
   const root = document.querySelector(":root") as HTMLElement;
@@ -38,17 +25,16 @@ function changeCssRootVariables(temeState: string) {
 }
 
 export const ThemeContext = ({ children, ...props }: Props) => {
-  const [temeState, setTemeState] = useState(
-    storage.getItem("theme") || "light"
-  );
+  const [nameTheme, setNameTheme] = useLocalStorage("theme", "");
+  const [temeState, setTemeState] = useState(nameTheme || "light");
 
   useEffect(() => {
-    storage.setItem("theme", temeState);
+    setNameTheme(temeState);
     changeCssRootVariables(temeState);
-  }, [temeState]);
+  }, [setNameTheme, temeState]);
 
-  function changeTheme(temeState: string) {
-    setTemeState(temeState);
+  function changeTheme(teme: string) {
+    setTemeState(teme);
   }
 
   return (

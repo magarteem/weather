@@ -1,42 +1,37 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getDataWeather } from "../thunk/getDataWeather";
-import { Weather } from "../types/types";
-
-type Response = {
-  status: number;
-  message: string;
-};
+import { ResponseError, Weather } from "../types/types";
 
 type CurrentWeather = {
   weather: Weather;
   isLoading: boolean;
   district: string;
-  response: Response;
+  error: ResponseError;
 };
 
 const initialState: CurrentWeather = {
   weather: {
     main: {
-      temp: 11,
-      feels_like: 10, //ощущается
-      pressure: "111", // давление
+      temp: 0,
+      feels_like: 0, //ощущается
+      pressure: "", // давление
     },
     weather: [
       {
-        description: "без осадков",
+        description: "",
         id: 0,
         icon: "",
       },
     ],
     wind: {
-      speed: 30,
+      speed: 0,
     },
-    name: "Тирасполь",
+    name: "",
   },
   isLoading: false,
-  district: "tiraspol",
-  response: {
-    status: 0,
+  district: "",
+  error: {
+    cod: "",
     message: "",
   },
 };
@@ -59,7 +54,7 @@ export const currentWeatherSlice = createSlice({
       action: PayloadAction<Weather>
     ) => {
       state.isLoading = false;
-      state.weather.main.temp = action.payload.main.temp;
+      state.weather.main.temp = +action.payload.main.temp.toFixed(1);
       state.weather.main.feels_like = action.payload.main.feels_like;
       state.weather.main.pressure = action.payload.main.pressure;
       state.weather.name = action.payload.name;
@@ -68,7 +63,14 @@ export const currentWeatherSlice = createSlice({
         action.payload.weather[0].description;
       state.weather.weather[0].icon = action.payload.weather[0].icon;
     },
-    [getDataWeather.rejected.type]: (state, action) => {},
+    [getDataWeather.rejected.type]: (
+      state: CurrentWeather,
+      action: PayloadAction<ResponseError>
+    ) => {
+      //console.log(action.payload.message);
+      //state.error.cod = action.payload.cod;
+      state.error.message = action.payload.message;
+    },
   },
 });
 

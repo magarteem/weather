@@ -12,11 +12,6 @@ interface Props {
 export const Cards = ({ days, togglePopUpFU }: Props) => {
   const { dt, temp, weather } = days;
 
-  //const disdatch = useAppDispatch();
-  //function togglePopUpFU() {
-  //  disdatch(togglePopUp());
-  //}
-
   const date = new Date(dt * 1000);
   let day = "";
   switch (date.getDay()) {
