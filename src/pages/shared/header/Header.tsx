@@ -6,7 +6,9 @@ export const Header = () => {
   return (
     <header className={s.header}>
       <div className={s.logoBlock}>
-        <GlobalSvgSelector id="header-logo" />
+        <div className={s.buttonPulsar}>
+          <GlobalSvgSelector id="header-logo" />
+        </div>
         <span>React weather</span>
       </div>
       <SelectComponent />

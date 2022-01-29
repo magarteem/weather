@@ -64,6 +64,9 @@ export const SelectComponent = () => {
     <div className={s.selectCountry}>
       <div className={s.themeSelect} onClick={temeFu}>
         <GlobalSvgSelector id="water-drop" />
+        <span className={s.pulse_button__rings}></span>
+        <span className={s.pulse_button__rings}></span>
+        <span className={s.pulse_button__rings}></span>
       </div>
       <Select
         //value={selectedOption}

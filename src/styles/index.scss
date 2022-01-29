@@ -23,6 +23,7 @@ body {
 
   .container {
     flex: 0 1 1200px;
+    position: relative;
 
     @media (max-width: 1220px) {
       padding: 0 10px;
