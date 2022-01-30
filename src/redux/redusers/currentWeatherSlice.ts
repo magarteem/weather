@@ -31,7 +31,6 @@ const initialState: CurrentWeather = {
   isLoading: false,
   district: "",
   error: {
-    cod: "",
     message: "",
   },
 };
@@ -39,11 +38,7 @@ const initialState: CurrentWeather = {
 export const currentWeatherSlice = createSlice({
   name: "current_weather",
   initialState,
-  reducers: {
-    removeTodo(state, action) {
-      state.isLoading = true;
-    },
-  },
+  reducers: {},
 
   extraReducers: {
     [getDataWeather.pending.type]: (state: CurrentWeather) => {
@@ -65,13 +60,12 @@ export const currentWeatherSlice = createSlice({
     },
     [getDataWeather.rejected.type]: (
       state: CurrentWeather,
-      action: PayloadAction<any>
+      action: PayloadAction<ResponseError>
     ) => {
-      // ???
       state.error.message = action.payload.message;
     },
   },
 });
 
-export const { removeTodo } = currentWeatherSlice.actions;
+export const {} = currentWeatherSlice.actions;
 export default currentWeatherSlice.reducer;

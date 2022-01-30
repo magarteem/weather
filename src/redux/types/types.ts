@@ -116,6 +116,5 @@ export interface Item {
 }
 
 export interface ResponseError {
-  cod: string;
   message: string;
 }

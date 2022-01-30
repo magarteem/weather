@@ -31,10 +31,7 @@ type CardsWeather = {
     showPopUp: boolean;
     popUpState: DayliType;
   };
-  error: {
-    cod: string;
-    message: string;
-  };
+  error: ResponseError;
 };
 
 const initialState: CardsWeather = {
@@ -108,7 +105,6 @@ const initialState: CardsWeather = {
   },
   isLoading: false,
   error: {
-    cod: "",
     message: "",
   },
 };
@@ -154,8 +150,7 @@ export const currentWeatherSliceCards = createSlice({
       state: CardsWeather,
       action: PayloadAction<ResponseError>
     ) => {
-      state.error.message = "222";
-      //state.error.message = action.payload.message;
+      state.error.message = action.payload.message;
     },
   },
 });
