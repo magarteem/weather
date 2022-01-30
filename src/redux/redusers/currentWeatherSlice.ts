@@ -31,7 +31,7 @@ const initialState: CurrentWeather = {
   isLoading: false,
   district: "",
   error: {
-    //cod: "",
+    cod: "",
     message: "",
   },
 };

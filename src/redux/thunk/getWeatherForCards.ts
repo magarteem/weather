@@ -1,5 +1,4 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-//@ts-ignore
 export const getWeatherForCards = createAsyncThunk(
   "current_weather/getWeatherForCards",
   async function (selectedOption: any, { rejectWithValue }) {
@@ -12,7 +11,6 @@ export const getWeatherForCards = createAsyncThunk(
         throw new Error("Server Error");
       }
       const data = await response.json();
-      //let data = {};
       return data;
     } catch (error) {
       return rejectWithValue(error);
