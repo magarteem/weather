@@ -3,7 +3,7 @@ import s from "./popUp.module.scss";
 import closePopUp from "../../../assets/images/closePopUp.png";
 import { GlobalSvgSelector } from "../../../assets/icons/global/globalSvgSelector";
 import { Clock } from "../clock/Clock";
-import { togglePopUp } from "../../../redux/redusers/currentWeatherCardsSlice";
+import { closeModalPopUp } from "../../../redux/redusers/currentWeatherCardsSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/app/hooks";
 import { Item } from "../../../redux/types/types";
 
@@ -13,16 +13,15 @@ export const PopUp = () => {
   const tempNew = useAppSelector(
     (state) => state.currentWeatherSliceCardsReducer.popUp.popUpState
   );
-  function togglePopUpFU() {
-    let t = 6;
-    disdatch(togglePopUp(t));
+  function closeModalPopUpFU() {
+    disdatch(closeModalPopUp());
   }
 
   const items = [
     {
       icon_id: "temp",
       name: "Температура",
-      value: `${tempNew.temp.day}° - ощущается как ${tempNew.feels_like.day}°"`,
+      value: `${tempNew.temp.day}° - ощущается как ${tempNew.feels_like.day}°`,
     },
     {
       icon_id: "pressure",
@@ -44,7 +43,7 @@ export const PopUp = () => {
 
   return (
     <>
-      <div className={s.blure}></div>
+      <div className={s.blure} onClick={closeModalPopUpFU}></div>
       <div className={s.popUp}>
         <div className={s.popUpLeft}>
           <div className={s.__temperature}> {`${tempNew.temp.day}`}&deg;</div>
@@ -65,7 +64,7 @@ export const PopUp = () => {
             <ThisDayItem key={item.value} item={item} tempNew={tempNew} />
           ))}
         </div>
-        <div className={s.closeBtn} onClick={togglePopUpFU}>
+        <div className={s.closeBtn} onClick={closeModalPopUpFU}>
           <img src={closePopUp} alt="closePopUp" />
         </div>
       </div>

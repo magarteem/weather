@@ -10,11 +10,11 @@
   padding: 10px;
   margin-top: 7px;
   @media (max-width: 1200px) {
-    //justify-content: center;
     flex-wrap: wrap;
   }
   @media (max-width: 575px) {
     justify-content: center;
+    padding: 0;
   }
 
   svg {
@@ -35,7 +35,11 @@
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
+  overflow: hidden;
   cursor: pointer;
+  @media (max-width: 1200px) {
+    height: 170px;
+  }
   @media (max-width: 767px) {
     width: 45%;
   }
@@ -43,32 +47,45 @@
     width: 90%;
   }
 
-  .dayOfWeek {
-    color: var(#{--text-color-default});
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    margin-bottom: 2px;
-  }
-  .dayOfTheMonth {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    color: $base-color;
-  }
-  .weather_svg {
-    width: 40px;
-    height: 40px;
-    display: block;
-    margin: -10px 0 43px;
-    img {
-      height: 100px;
+  .cardsUp {
+    @media (max-width: 1200px) {
+      display: flex;
+      position: relative;
     }
-    svg {
-      width: 100%;
-      height: 100%;
+
+    .dayOfWeek {
+      color: var(#{--text-color-default});
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 2px;
+      @media (max-width: 575px) {
+        font-size: 25px;
+        line-height: 40px;
+      }
+    }
+    .dayOfTheMonth {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: $base-color;
+    }
+
+    .weather_svg {
+      width: 40px;
+      height: 40px;
       display: block;
+      margin: -10px 0 43px;
+      img {
+        height: 100px;
+        @media (max-width: 1200px) {
+          position: absolute;
+          top: -12px;
+          right: -10px;
+          height: 180px;
+        }
+      }
     }
   }
   .temperatureDay {
@@ -76,12 +93,18 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
+    .cardsDay {
+      font-size: 15px;
+    }
   }
   .temperatureNight {
     font-weight: normal;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 16px;
     color: $base-color;
+    .cardsNight {
+      font-size: 12px;
+    }
   }
   .precipitation {
     margin-top: 10px;
@@ -100,6 +123,9 @@
   display: flex;
   justify-content: flex-start;
   margin-top: 50px;
+  @media (max-width: 767px) {
+    margin-top: 25px;
+  }
 
   .tabsButton {
     display: flex;

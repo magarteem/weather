@@ -22,7 +22,6 @@ export const getWeatherForCards = createAsyncThunk(
 
 //7 дней
 //https://api.openweathermap.org/data/2.5/onecall?lat=46.835992&lon=29.611091&units=metric&lang=ru&appid=f7a72a2564c886821058f0ff2b8cb53a
-
 // долгота - lat | штрота - lon
 //Днестровск 46.623465, 29.910923
 //Слободзея 46.743202, 29.695353

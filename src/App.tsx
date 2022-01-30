@@ -15,8 +15,8 @@ function App() {
 
   return (
     <div className="wrap">
+      {statusPopUp && <PopUp />}
       <div className="container">
-        {statusPopUp && <PopUp />}
         <Header />
         <Routes>
           <Route path="/*" element={<Home />} />

@@ -13,6 +13,7 @@
   background-image: url("../../../../assets//images//cloud.png");
   background-repeat: no-repeat;
   background-position: top 0 right 0;
+
   svg {
     @media (max-width: 1200px) {
       width: 100%;
@@ -30,29 +31,37 @@
     margin-left: 0;
     margin-top: 10px;
   }
+  @media (max-width: 575px) {
+    padding: 15px 0 15px 10px;
+    height: 220px;
+  }
 }
 
 .thisDayItem {
   display: flex;
   align-items: center;
   margin: 5px;
-  .imgIndicator {
-    margin-right: 10px;
+  ._iconWeather {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
-    border-radius: $border-radius;
-    background-color: $light-background;
-    box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
-    svg {
-      width: 15px;
-      height: 15px;
-    }
-    img {
-      height: 100%;
-      width: 100%;
+    .imgIndicator {
+      margin-right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+      border-radius: $border-radius;
+      background-color: $light-background;
+      box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
     }
   }
   .dayItemName {
@@ -61,6 +70,9 @@
     font-size: 14px;
     line-height: 17px;
     color: $base-color;
+    @media (max-width: 575px) {
+      width: 110px;
+    }
   }
   .dayItemData {
     color: var(#{--text-color-default});

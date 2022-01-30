@@ -13,12 +13,9 @@ export const getDataWeather = createAsyncThunk(
         throw new Error("Server Error");
       }
       const data = await response.json();
-      //let data = {};
       return data;
     } catch (error) {
       return rejectWithValue(error);
     }
   }
 );
-//lat=46.623465&lon=29.910923
-//`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&lang=ru&exclude=minutely,hourly&appid=f7a72a2564c886821058f0ff2b8cb53a`

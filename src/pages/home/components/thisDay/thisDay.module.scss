@@ -6,7 +6,7 @@
   border-radius: $border-radius;
   display: flex;
   flex-direction: column;
-  //flex-grow: 1;
+  overflow: hidden;
   height: 300px;
   flex: 0 1 400px;
   padding: 20px;
@@ -29,6 +29,7 @@
         font-weight: 500;
         font-size: 96px;
         line-height: 117px;
+        z-index: 2;
         // ? @
         @media (max-width: 991px) {
           font-size: 70px;
@@ -56,8 +57,20 @@
         right: -50px;
         height: 250px;
         //background-color: royalblue;
+        @media (max-width: 1200px) {
+          bottom: -48px;
+          right: -52px;
+          height: 225px;
+        }
         @media (max-width: 767px) {
+          bottom: -140px;
           right: 0;
+          height: 325px;
+        }
+        @media (max-width: 480px) {
+          bottom: -68px;
+          right: -44px;
+          height: 250px;
         }
       }
     }

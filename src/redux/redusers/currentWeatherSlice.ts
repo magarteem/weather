@@ -31,7 +31,7 @@ const initialState: CurrentWeather = {
   isLoading: false,
   district: "",
   error: {
-    cod: "",
+    //cod: "",
     message: "",
   },
 };
@@ -65,10 +65,9 @@ export const currentWeatherSlice = createSlice({
     },
     [getDataWeather.rejected.type]: (
       state: CurrentWeather,
-      action: PayloadAction<ResponseError>
+      action: PayloadAction<any>
     ) => {
-      //console.log(action.payload.message);
-      //state.error.cod = action.payload.cod;
+      // ???
       state.error.message = action.payload.message;
     },
   },

@@ -119,7 +119,6 @@ export const currentWeatherSliceCards = createSlice({
   reducers: {
     togglePopUp(state: CardsWeather, action: PayloadAction<number>) {
       state.popUp.showPopUp = !state.popUp.showPopUp;
-
       const find = state.getWeather.daily.find(
         (x: OneWeatherDayType) => x.dt === action.payload
       );
@@ -131,6 +130,9 @@ export const currentWeatherSliceCards = createSlice({
       state.popUp.popUpState.pressure = find?.pressure;
       state.popUp.popUpState.wind_speed = find?.wind_speed;
       state.popUp.popUpState.weather.description = find?.weather[0].description;
+    },
+    closeModalPopUp(state: CardsWeather) {
+      state.popUp.showPopUp = !state.popUp.showPopUp;
     },
   },
 
@@ -152,10 +154,12 @@ export const currentWeatherSliceCards = createSlice({
       state: CardsWeather,
       action: PayloadAction<ResponseError>
     ) => {
-      state.error.message = action.payload.message;
+      state.error.message = "222";
+      //state.error.message = action.payload.message;
     },
   },
 });
 
-export const { togglePopUp } = currentWeatherSliceCards.actions;
+export const { togglePopUp, closeModalPopUp } =
+  currentWeatherSliceCards.actions;
 export default currentWeatherSliceCards.reducer;

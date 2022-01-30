@@ -20,10 +20,10 @@ const options: OptionsType[] = [
   { value: { lat: 46.623465, lon: 29.910923 }, label: "Днестровск" },
   { value: { lat: 46.743202, lon: 29.695353 }, label: "Слободзея" },
   { value: { lat: 46.835992, lon: 29.611091 }, label: "Тирасполь" },
-  { value: { lat: 46.823091, lon: 29.481901 }, label: "Бендеры" },
+  { value: { lat: 46.823087, lon: 29.481899 }, label: "Бендеры" },
   { value: { lat: 47.146258, lon: 29.293545 }, label: "Григориополь" },
   { value: { lat: 47.268725, lon: 29.149474 }, label: "Дубосары" },
-  { value: { lat: 47.146258, lon: 29.293545 }, label: "Рыбница" },
+  { value: { lat: 47.765297, lon: 29.00775 }, label: "Рыбница" },
   { value: { lat: 48.031631, lon: 28.698002 }, label: "Каменка" },
 ];
 
@@ -55,6 +55,13 @@ export const SelectComponent = () => {
       ...styles,
       color: temeState === "dark" ? "#fff" : " #000",
     }),
+    menu: (styles: any) => ({
+      ...styles,
+      marginTop: "1px",
+      zIndex: 3,
+      color: temeState === "dark" ? "#fff" : " #000",
+      backgroundColor: temeState === "dark" ? "#4f4f4f" : "#fff",
+    }),
   };
   function temeFu() {
     changeTheme(temeState === "light" ? "dark" : "light");
@@ -69,7 +76,7 @@ export const SelectComponent = () => {
         <span className={s.pulse_button__rings}></span>
       </div>
       <Select
-        //value={selectedOption}
+        isSearchable={false}
         options={options}
         styles={colorStyles}
         defaultValue={options[2]}

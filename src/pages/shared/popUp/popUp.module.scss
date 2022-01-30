@@ -17,12 +17,16 @@
   @media (max-width: 767px) {
     flex: 0 1 90%;
     width: 95%;
-    //max-width: 700px;
-    //height: 300px;
   }
   @media (max-width: 575px) {
     flex-direction: column;
     height: auto;
+    padding: 20px 0 20px 25px;
+  }
+  @media (max-width: 480px) {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0 20px 10px;
   }
   .popUpLeft {
     @media (max-width: 575px) {
@@ -58,6 +62,7 @@
         height: 150px;
         @media (max-width: 575px) {
           height: 209px;
+          left: 15px;
         }
       }
     }
@@ -66,6 +71,10 @@
       font-size: 15px;
       line-height: 18px;
       color: $base-color;
+      padding-top: 10px;
+      @media (max-width: 575px) {
+        padding-top: 0;
+      }
     }
   }
 
@@ -75,7 +84,8 @@
     justify-content: space-between;
     padding-right: 20px;
     @media (max-width: 575px) {
-      padding-top: 40px;
+      padding-top: 15px;
+      padding-right: 2px;
     }
   }
 
